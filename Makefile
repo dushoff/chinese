@@ -4,7 +4,7 @@ current: target
 -include target.mk
 Ignore = target.mk
 
-# -include makestuff/perl.def
+-include makestuff/perl.def
 
 vim_session:
 	bash -cl "vmt"
@@ -12,12 +12,32 @@ vim_session:
 ######################################################################
 
 ## Current cedict files
+## https://www.mdbg.net/chinese/dictionary?page=cc-cedict
 
-Ignore += cedict.tgz
+Ignore += cedict.*
 cedict.tgz:
 	wget -O $@ "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz"
 
-cedict.txt: cedict.tgz
+cedict.tar: cedict.tgz
+	gunzip $<
+
+cedict.txt: cedict.tar
+	$(ln)
+
+## Place short into pipeline for debugging
+cedict.short.txt: cedict.txt
+	cat $< | head -20000 | tail -1000 > $@
+
+Sources += $(wildcard *.pl) 
+
+cedict.taiwan.txt: cedict.txt taiwan.pl
+	$(PUSH)
+
+cedict.dict.txt: cedict.taiwan.txt dict.pl
+	$(PUSH)
+
+cedict.sort.txt: cedict.dict.txt sortdict.pl
+	$(PUSH)
 
 ######################################################################
 
