@@ -39,6 +39,21 @@ cedict.dict.txt: cedict.taiwan.txt dict.pl
 cedict.sort.txt: cedict.dict.txt sortdict.pl
 	$(PUSH)
 
+install: ~/Dropbox/7054/dict.txt ~/.cvimrc ~/.ecvimrc
+
+~/Dropbox/7054/dict.txt: | cedict.sort.txt ~/Dropbox/7054
+	$(CP) cedict.sort.txt $@
+
+~/Dropbox/7054:
+	cd ~/Dropbox && mkdir 7054
+
+Sources += rc.vim ec.vim
+~/.cvimrc: rc.vim
+	$(linkelsewhere)
+
+~/.ecvimrc: ec.vim
+	$(linkelsewhere)
+
 ######################################################################
 
 ### Makestuff
