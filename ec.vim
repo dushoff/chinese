@@ -5,6 +5,7 @@ w
 bd
 
 nunmap X
+nunmap D
 nunmap E
 nunmap Z
 nunmap F

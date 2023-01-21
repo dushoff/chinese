@@ -5,6 +5,7 @@ edit ~/Dropbox/7054/dict.txt
 edit #
 
 nmap X *Nmm<C-^>1Gn
+nmap D 0"cy$<C-^>`mve"cp
 nmap E 0"cyt<C-I><C-^>`mve"cp
 nmap Z XE
 nmap F 0f<TAB>l*Ndd1GnP
