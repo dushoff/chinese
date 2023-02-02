@@ -30,6 +30,7 @@ cedict.short.txt: cedict.txt
 
 Sources += $(wildcard *.pl) 
 
+## cedict.taiwan.txt: cedict.short.txt taiwan.pl
 cedict.taiwan.txt: cedict.txt taiwan.pl
 	$(PUSH)
 
