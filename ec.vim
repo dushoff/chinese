@@ -8,6 +8,7 @@ nunmap X
 nunmap D
 nunmap E
 nunmap Z
+nunmap Y
 nunmap F
 
 iunmap Z
