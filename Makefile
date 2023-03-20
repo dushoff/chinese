@@ -30,6 +30,8 @@ cedict.short.txt: cedict.txt
 
 Sources += $(wildcard *.pl) 
 
+## This matches the keyword "Taiwan pr." and does something smart
+## "also pr." follows the same logic, but was not processed last time
 ## cedict.taiwan.txt: cedict.short.txt taiwan.pl
 cedict.taiwan.txt: cedict.txt taiwan.pl
 	$(PUSH)
