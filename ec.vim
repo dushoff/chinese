@@ -1,7 +1,8 @@
 colo default
 
-e #
-w
+write
+edit ~/Dropbox/7054/dict.txt
+write
 bd
 
 nunmap X
