@@ -39,11 +39,13 @@ cedict.taiwan.txt: cedict.txt taiwan.pl
 cedict.dict.txt: cedict.taiwan.txt dict.pl
 	$(PUSH)
 
+## You can look at this file through edit if you have concerns about the main file below
 cedict.sort.txt: cedict.dict.txt sortdict.pl
 	$(PUSH)
 
 install: ~/Dropbox/7054/dict.txt ~/.cvimrc ~/.ecvimrc
 
+## Avoid remaking or editing this file
 ~/Dropbox/7054/dict.txt: | cedict.sort.txt ~/Dropbox/7054
 	$(CP) cedict.sort.txt $@
 
