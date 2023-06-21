@@ -43,7 +43,8 @@ cedict.dict.txt: cedict.taiwan.txt dict.pl
 cedict.sort.txt: cedict.dict.txt sortdict.pl
 	$(PUSH)
 
-install: ~/Dropbox/7054/dict.txt ~/.cvimrc ~/.ecvimrc
+install: ~/.cvimrc ~/.ecvimrc
+dropInstall: ~/Dropbox/7054/dict.txt
 
 ## Avoid remaking or editing this file
 ~/Dropbox/7054/dict.txt: | cedict.sort.txt ~/Dropbox/7054
