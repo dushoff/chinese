@@ -46,7 +46,8 @@ cedict.sort.txt: cedict.dict.txt sortdict.pl
 install: ~/.cvimrc ~/.ecvimrc
 dropInstall: ~/Dropbox/7054/dict.txt
 
-## Avoid remaking or editing this file
+## Avoid remaking dict.txt. Don't edit the cedict, that's automatic
+## Hopefully will never need to update, but if so we will want to automatically compare old and new cedict files
 ~/Dropbox/7054/dict.txt: | cedict.sort.txt ~/Dropbox/7054
 	$(CP) cedict.sort.txt $@
 
