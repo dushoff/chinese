@@ -50,6 +50,7 @@ dropInstall: ~/Dropbox/7054/dict.txt
 ~/Dropbox/7054/dict.txt: | cedict.sort.txt ~/Dropbox/7054
 	$(CP) cedict.sort.txt $@
 
+## F2 does not work for targets with ~
 ~/Dropbox/7054:
 	cd ~/Dropbox && mkdir 7054
 
