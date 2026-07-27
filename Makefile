@@ -36,6 +36,7 @@ Sources += $(wildcard *.pl)
 cedict.taiwan.txt: cedict.txt taiwan.pl
 	$(PUSH)
 
+## Make a JD-style dictionary
 cedict.dict.txt: cedict.taiwan.txt dict.pl
 	$(PUSH)
 
