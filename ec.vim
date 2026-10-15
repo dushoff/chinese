@@ -1,3 +1,4 @@
+let g:chinese_mode = 0
 colo default
 
 write
